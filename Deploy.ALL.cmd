@@ -1,0 +1,20 @@
+@echo off
+cecopy "iTrader.Client2\bin\Release\iTrader.Client2.exe" "\Program Files\iTraderClient2\iTrader.Client2.exe"
+cecopy "itcInterface\bin\Release\itcInterface.dll" "\Program Files\iTraderClient2\itcInterface.dll"
+cecopy "itcDatabase\bin\Release\itcDatabase.dll" "\Program Files\iTraderClient2\itcDatabase.dll"
+cecopy "itcDatabase\bin\Release\System.Data.SqlServerCe.dll" "\Program Files\iTraderClient2\System.Data.SqlServerCe.dll"
+cecopy "itcConfig\bin\Release\itcConfig.dll" "\Program Files\iTraderClient2\itcConfig.dll"
+cecopy "itcClassess\bin\Release\itcClassess.dll" "\Program Files\iTraderClient2\itcClassess.dll"
+cecopy "itcLog\bin\Release\itcLog.dll" "\Program Files\iTraderClient2\itcLog.dll"
+cecopy "NetworkLib\bin\Release\NetworkLib.dll" "\Program Files\iTraderClient2\NetworkLib.dll"
+cecopy "Plugins\ConsumedOrders\bin\Release\ConsumedOrders.dll" "\Program Files\iTraderClient2\Plugins\ConsumedOrders.dll"
+cecopy "Plugins\ReportApplication\bin\Release\ReportApplication.dll" "\Program Files\iTraderClient2\Plugins\ReportApplication.dll"
+cecopy "Plugins\GPSShopBinder\bin\Release\GPSShopBinder.dll" "\Program Files\iTraderClient2\Plugins\GPSShopBinder.dll"
+cecopy "assemblies\sqlceca35.dll" "\Program Files\iTraderClient2\sqlceca35.dll"
+cecopy "assemblies\sqlcecompact35.dll" "\Program Files\iTraderClient2\sqlcecompact35.dll"
+cecopy "assemblies\sqlceme35.dll" "\Program Files\iTraderClient2\sqlceme35.dll"
+cecopy "assemblies\sqlceoledb35.dll" "\Program Files\iTraderClient2\sqlceoledb35.dll"
+cecopy "assemblies\sqlceqp35.dll" "\Program Files\iTraderClient2\sqlceqp35.dll"
+cecopy "assemblies\sqlcese35.dll" "\Program Files\iTraderClient2\sqlcese35.dll"
+
+pause

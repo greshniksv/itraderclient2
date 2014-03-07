@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Print">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="traderName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="storeName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientAndCostList" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PrintResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrintResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PrintSoapIn">
+    <wsdl:part name="parameters" element="tns:Print" />
+  </wsdl:message>
+  <wsdl:message name="PrintSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PrintChequesServiceSoap">
+    <wsdl:operation name="Print">
+      <wsdl:input message="tns:PrintSoapIn" />
+      <wsdl:output message="tns:PrintSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PrintChequesServiceSoap" type="tns:PrintChequesServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Print">
+      <soap:operation soapAction="http://tempuri.org/Print" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PrintChequesServiceSoap12" type="tns:PrintChequesServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Print">
+      <soap12:operation soapAction="http://tempuri.org/Print" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PrintChequesService">
+    <wsdl:port name="PrintChequesServiceSoap" binding="tns:PrintChequesServiceSoap">
+      <soap:address location="http://192.168.1.5:85/p/PrintChequesService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PrintChequesServiceSoap12" binding="tns:PrintChequesServiceSoap12">
+      <soap12:address location="http://192.168.1.5:85/p/PrintChequesService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
